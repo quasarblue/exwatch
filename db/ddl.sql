@@ -16,3 +16,12 @@ CREATE TABLE public.cmc_exchange_checklist (
 
 \copy cmc_exchange_checklist(name, score, volume24h, liquidity, visitswek, xem, xym, blockers) from 'cmc-copy.csv' delimiter ';' null as 'null' header csv;
 
+CREATE TABLE PUBLIC.cmc_api_exchange (
+  id int,
+  name varchar(200),
+  weekly_visits numeric(10) null,
+  spot_volume_usd float4 null,
+  PRIMARY KEY(id)
+)
+
+update cmc_exchange_checklist set cmc_api_id=sub.id from (select id, name from cmc_api_exchange ) as sub where cmc_exchange_checklist.name=sub.name

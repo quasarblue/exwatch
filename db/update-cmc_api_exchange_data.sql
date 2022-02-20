@@ -1,0 +1,1 @@
+update cmc_exchange_checklist set visitswek=sub.weekly_visits, volume24h=spot_volume_usd from (select id, weekly_visits, spot_volume_usd from cmc_api_exchange ) as sub where cmc_exchange_checklist.cmc_api_id=sub.id

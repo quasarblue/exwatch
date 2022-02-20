@@ -22,7 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.data.domain.Sort;
 import exwatch.CmcExchangeChecklistRepository;
 
 
@@ -38,7 +38,7 @@ public class ExwatchController {
 	public ModelAndView getAllCmc() {
 	    // This returns a JSON or XML with the users
 	    ModelAndView mav = new ModelAndView("list-cmc");
-		mav.addObject("cmc", cmcExchangeChecklistRepository.findAll());
+		mav.addObject("cmc", cmcExchangeChecklistRepository.findAll(Sort.by("score").descending()));
 		return mav;
 	}
 	
