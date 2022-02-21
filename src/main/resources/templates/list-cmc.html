@@ -65,10 +65,10 @@
    <td th:text="${#numbers.formatDecimal(exchange.liquidity,3,'POINT',0,'COMMA')}" class="text-end p-2">score</td>
    <td th:text="${#numbers.formatDecimal(exchange.visitswek,3,'POINT',0,'COMMA')}" class="text-end p-2">score</td>
    <td class="text-end p-2">
-     <input type="checkbox" th:value="${exchange.xem}" th:checked="${exchange.xem == true}"></input>
+     <input disabled type="checkbox" th:value="${exchange.xem}" th:checked="${exchange.xem == true}"></input>
    </td>
    <td class="text-end p-2">
-     <input type="checkbox" th:value="${exchange.xym}" th:checked="${exchange.xem == true}"></input>
+     <input disabled type="checkbox" th:value="${exchange.xym}" th:checked="${exchange.xem == true}"></input>
    </td>
    
    <td th:text="${exchange.blockers}" class="text-end">score</td>
