@@ -42,7 +42,11 @@
       $(document).ready(function() {
         var table = $('#xem_xym_cmc_list')
           .DataTable({
-        	"paging":   false
+        	"paging":   false,
+		"language": {
+                  "decimal": ",",
+                  "thousands": "."
+               }
           });
         table.column( '1:visible' ).order( 'desc' ).draw();
       } );
